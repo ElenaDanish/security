@@ -1,4 +1,4 @@
-package ru.bft.security;
+package ru.bft.security.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -7,7 +7,7 @@ CREATE TABLE customer (
 );
 
 
-INSERT INTO customer
+INSERT INTO customers
 (email, pwd, "role")
-values ('lucien@mail.ru', '$2a$12$V7Nr1kksonKfd7RgSZPmA..VAtLkZXKFlMreD0AFtOSXtj7nV6ZIC', 'user'),
-('helena@mail.ru', '$2a$12$H4/bZi9E05vKd8em6DcF6.SyVdipZyI2mntUxMarIMYmCzo3W6Q8m', 'admin');
+values ('lucien@mail.ru', '$2a$10$QiTeYrwPULbAvkJjKGnve.5FD/BfuPG0Sk57B18AQitK4LcbYB0rS', 'user'),
+('helena@mail.ru', '$2a$10$hytLYqsC9P4WPk6T6tVj7.BED/D5ptlsdKTxfYDBUgNeM9Uxw8Y3S', 'admin');

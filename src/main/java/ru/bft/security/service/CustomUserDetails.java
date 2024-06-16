@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.bft.security.SecurityCustomer;
+import ru.bft.security.model.SecurityCustomer;
 import ru.bft.security.entity.Customers;
 import ru.bft.security.repository.CustomersRepository;
 
