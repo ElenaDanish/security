@@ -13,8 +13,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests().
-                antMatchers("/myInfo").authenticated().
-                antMatchers("/contact").permitAll().
+                antMatchers("/myInfo").hasRole("ADMIN").
+                antMatchers("/contact").hasAnyRole("ADMIN", "USER").
                 and().formLogin().and().httpBasic();
     }
 
