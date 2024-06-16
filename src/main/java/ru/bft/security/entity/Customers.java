@@ -1,6 +1,9 @@
 package ru.bft.security.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Customers {
@@ -11,6 +14,11 @@ public class Customers {
     private String email;
     private String pwd;
     private String role;
+
+    @JsonIgnore
+    @OneToMany(mappedBy="customer",fetch=FetchType.EAGER)
+    private Set<Authority> authorities;
+
 
     public int getId() {
         return id;
@@ -42,5 +50,13 @@ public class Customers {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public Set<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Set<Authority> authorities) {
+        this.authorities = authorities;
     }
 }
