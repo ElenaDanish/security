@@ -6,13 +6,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import ru.bft.security.filters.AuthoritiesLoggingAfterFilter;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests().
+        httpSecurity.addFilterAfter(new AuthoritiesLoggingAfterFilter(), BasicAuthenticationFilter.class).
+                authorizeRequests().
                 antMatchers("/myInfo").hasRole("ADMIN").
                 antMatchers("/contact").hasAnyRole("ADMIN", "USER").
                 and().formLogin().and().httpBasic();
